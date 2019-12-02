@@ -7,14 +7,15 @@ RSpec.describe 'user sees one article', type: :feature do
   end
   describe 'they link from the articles index' do
     it 'displays information for one article' do
-      visits articles_path
-      # visits '/articles'
+      visit articles_path
+      # visit '/articles'
 
       click_link @article_1.title
 
       expect(current_path).to eq("/articles/#{@article_1.id}")
       expect(page).to have_content(@article_1.title)
       expect(page).to have_content(@article_1.body)
+      expect(page).to have_link('<< Back To Articles List')
     end
   end
 end
