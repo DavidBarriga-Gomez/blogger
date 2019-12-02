@@ -16,7 +16,6 @@ RSpec.describe 'user sees all articles', type: :feature do
       expect(page).to have_link(@article_1.title)
       expect(page).to have_link(@article_2.title)
       expect(page).to have_link('Create New Article')
-      save_and_open_page
     end
   end
 end
