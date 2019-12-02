@@ -9,9 +9,12 @@ RSpec.describe 'user sees all articles', type: :feature do
 
     it 'displays all articles' do
       visit '/articles'
-      
+
       expect(page).to have_content(@article_1.title)
       expect(page).to have_content(@article_2.title)
+
+      expect(page).to have_link(@article_1.title)
+      expect(page).to have_link(@article_2.title)
     end
   end
 end
