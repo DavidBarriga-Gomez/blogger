@@ -16,6 +16,10 @@ RSpec.describe 'user sees one article', type: :feature do
       expect(page).to have_content(@article_1.title)
       expect(page).to have_content(@article_1.body)
       expect(page).to have_link('<< Back To Articles List')
+
+      click_on ('<< Back To Articles List')
+
+      expect(current_path).to eq(articles_path)
     end
   end
 end
